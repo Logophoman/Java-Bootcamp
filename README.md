@@ -62,6 +62,13 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 ---
 
-## [**A7**  Tic Tac Toe](L07)
+## [**A7**  Flexibles Array](L08)
 
 ---
+
+# Mittelschwere Aufgaben
+
+## [**A8**  Tic Tac Toe](L07)
+
+---
+
