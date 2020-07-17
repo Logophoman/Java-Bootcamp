@@ -14,6 +14,49 @@
 
 ---
 
+```Java
+
+//Beispiellösung
+
+public static void main(String[] args) {
+for (int i = 0; i < 1000; i ++) {
+System.out.println(würfel());
+}
+}
+
+public static int würfel() {
+int result;
+
+result = (int)(Math.random() * 6) + 1;
+
+return result;
+}
+
+
+/////////////////////////////////////////////////
+
+package einfach;
+
+public class Würfel {
+
+public static void main(String[] args) {
+for (int i = 0; i < 1000; i ++) {
+System.out.println(würfel());
+}
+}
+
+public static int würfel() {
+int result;
+
+result = (int)(Math.random() * 6) + 1;
+
+return result;
+}
+}
+
+```
+
+
 ## **?! _<small>Q&A</small>_** Fragen und Antworten
 
 Fragen von: [Logophoman](https://github.com/Logophoman) eingepflegt.
