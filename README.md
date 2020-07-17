@@ -74,7 +74,7 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 ---
 
-## [Hangman]
+## [Hangman](L12)
 
 ---
 
