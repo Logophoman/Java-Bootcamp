@@ -1,8 +1,9 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _8_** Tic Tac Toe
+## **A _9_** Kniffel/Yazzy
 
-- Schreibe Das Spiel Tic Tac Toe für die Konsole. 
+
+- Schreibe Das Spiel Kniffel für die Konsole und zwei Spieler. 
 
 Benötigte Ressourcen:
 
@@ -36,33 +37,63 @@ Try-Catch:
 
 ![Try-Catch](trycatch.JPG)
 
+- Die Würfel Klasse aus ## [**A0** Würfel](L01)  
+
 Erfülle folgnde Anforderungen: 
 
 - 2 Spieler können das Spiel Spielen
-- Spieler können in der Konsole die Felder mit den Zahlen 1-9 ansteuern
+- Spieler können in der Konsole sehen wie viele Punkte sie Aktuell in welcher Rubrik haben
+- Spieler können mit 5 Würfeln bis zu 3 mal würfeln
+- Mit den Nummern 1-5 kann ein Spieler steuern welche Würfel er diese Runde behalten möchte
 - Falsche eingaben werden mit Try/Cath abgefangen
-- Das Feld wird nach jeder Eingabe in der Konsole gezeichnet
+- Die Zwischenergebnisse werden nach jeder Runde in der Konsole gezeichnet
 - Nutzer erhalten hilfreiche Anweisungen
 
 Beispiele:
 ```Java
-//Leeres Feld:
- | | 
- | | 
- | | 
+//Beispiel ausgabe in der Konsole:
 
-//Feld im Spiel:
+Spieler 1
 
-X| |O
- |O|X
- | | 
+1 | -
+2 | 6
+3 | -
+4 | 16
+5 | 10
+6 | 24
+
+Bonus | - 
+
+drei Gleiche | -
+vier Gleiche | 14
+kleine Straße | 30
+große Straße | 40
+Full House | 25
+Kniffel | -
+Chance | -
+
+------------
+
+Spieler 2
+
+1 | 4
+2 | 6
+3 | -
+4 | -
+5 | 10
+6 | 6
+
+Bonus | - 
+
+drei Gleiche | -
+vier Gleiche | 17
+kleine Straße | 30
+große Straße | 40
+Full House | 25
+Kniffel | 50
+Chance | 21
+
 ```
-
-- Sind 3 Steine der gleichen "Sorte" in einer Reihe wird ausgegeben welcher Spieler gewinnt
-
-Optional:
-
-- Schreibe einen BOT, der gegen den Spieler Spielt (z.B. per Random oder sogar entsprechend der jeweiligen Möglichkeiten)
 
 ---
 

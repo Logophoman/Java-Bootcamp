@@ -1,8 +1,9 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _8_** Tic Tac Toe
+## **A _9_** Kniffel/Yazzy
 
-- Schreibe Das Spiel Tic Tac Toe für die Konsole. 
+
+- Schreibe Das Spiel 4 Gewinnt für die Konsole und zwei Spieler. 
 
 Benötigte Ressourcen:
 
@@ -39,7 +40,8 @@ Try-Catch:
 Erfülle folgnde Anforderungen: 
 
 - 2 Spieler können das Spiel Spielen
-- Spieler können in der Konsole die Felder mit den Zahlen 1-9 ansteuern
+- Steine "fallen" nach unten, weden direkt unten angezeigt
+- Spieler können in der Konsole die Reihen in denen ein Stein eingeworfen wird mit den Zahlen 1-10 ansteuern
 - Falsche eingaben werden mit Try/Cath abgefangen
 - Das Feld wird nach jeder Eingabe in der Konsole gezeichnet
 - Nutzer erhalten hilfreiche Anweisungen
@@ -47,22 +49,32 @@ Erfülle folgnde Anforderungen:
 Beispiele:
 ```Java
 //Leeres Feld:
- | | 
- | | 
- | | 
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
 
 //Feld im Spiel:
 
-X| |O
- |O|X
- | | 
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | | | | | | | | |
+ | | | |O| | | | | | |
+ | | | |X| |X|O|X| | |
+ | |X|O|X|O|O|O|X| | |
 ```
 
-- Sind 3 Steine der gleichen "Sorte" in einer Reihe wird ausgegeben welcher Spieler gewinnt
-
-Optional:
-
-- Schreibe einen BOT, der gegen den Spieler Spielt (z.B. per Random oder sogar entsprechend der jeweiligen Möglichkeiten)
+- Sind 4 Steine der gleichen "Sorte" in einer Reihe wird ausgegeben welcher Spieler gewinnt
 
 ---
 

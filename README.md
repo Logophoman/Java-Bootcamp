@@ -70,5 +70,11 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 ## [**A8**  Tic Tac Toe](L07)
 
+## [**A9**  Kniffel](L09)
+
+# Schwere Aufgaben
+
+## [**A10**  4 Gewinnt](L10)
+
 ---
 
