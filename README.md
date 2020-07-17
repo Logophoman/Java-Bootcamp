@@ -35,7 +35,11 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 # Einfache Aufgaben
 
-## [Min Max aus Array Bestimmen]
+## [Min Max aus Array Bestimmen](L000)
+
+---
+
+## [String-Arrays zusammenführen](L001)
 
 ---
 
