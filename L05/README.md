@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _5_** Fibbonachi Reihe
+## **A** Fibbonachi Reihe
 
 > Die Fibbonachi Reihe ist sehr wichtig in der Mathematik und der Natur. Jede Zahl wird aus den vorangeganenen beiden Zahlen addiert. Die Reihe fängt demnach wie folgt an: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 usw...
 

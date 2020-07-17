@@ -35,15 +35,15 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 # Einfache Aufgaben
 
+## [Min Max aus Array Bestimmen]
+
+---
+
 ## [Würfel](L01)  
 
 ---
 
 ## [String Array alphabetisch Sortieren](L00)  
----
-
-## [Array nach Aufsteigenden Zahlen Sortieren]
-
 ---
 
 ## [Float Array Sortieren](L02)  
@@ -70,14 +70,6 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 ---
 
-## [Min Max aus Array Bestimmen]
-
----
-
-## [Würfel-Funktion]
-
----
-
 ## [Hangman]
 
 ---
@@ -88,7 +80,9 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 ## [Kniffel](L09)
 
-## [Sierpinski-Dreieck Fraktal (Zweidimensionales Array)](L10)
+## [Sierpinski-Dreieck Fraktal (Zweidimensionales Array)](L11)
+
+## [Lagerverwaltung]
 
 ## [Bibliothek/Archiv]
 

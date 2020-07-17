@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _1_** Würfel
+## **A** Würfel
 
 - Schreibe eine Funktion mit dem Namen Wuerfel und dem Rückgabewert int, die eine zufällige Zahl zwischen 1 und 6 mit einer Wahrscheinlichkeit von jeweils 1/6 zurückgibt
 

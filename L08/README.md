@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _8_** Flexibler Array
+## **A** Flexibler Array
 
 Arrays haben in Java immer eine feste, vordefinierte Größe. Das ist manchmal deshalb ungünstig wenn wir nicht wissen, wie viele Daten wir in einem Array speichern möchten. 
 

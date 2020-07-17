@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _8_** Tic Tac Toe
+## **A** Tic Tac Toe
 
 - Schreibe Das Spiel Tic Tac Toe für die Konsole. 
 

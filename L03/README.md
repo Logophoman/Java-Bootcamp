@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _3_** Muster Ausgeben
+## **A** Muster Ausgeben
 
 - Schreibe eine Funktion mit dem Namen ClassicMuster das einen String akzeptiert und in der Konsole direkt folgendes Muster zu einem beliebiigen String ausgibt: 
 

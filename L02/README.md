@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _2_** Float Array Sortieren
+## **A** Float Array Sortieren
 
 - Schreibe eine Funktion mit dem Namen SortiereArray die ein Array vom Typ Float akzeptiert und ein sortiertes Array zurückgibt.
 

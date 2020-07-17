@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _6_** Pallindromchecker
+## **A** Pallindromchecker
 
 - Schreibe eine Funktion mit dem Namen CheckPallindrom die einen String als eingabeparameter Akzeptiert und einen Boolean zurückgibt, ob der entsprechende String ein Pallindrom ist.
 

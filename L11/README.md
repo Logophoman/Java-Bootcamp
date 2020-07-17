@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _9_** Kniffel/Yazzy
+## **A** Sierpinski-Dreieck Fraktal
 
 
 - Schreibe Das Spiel 4 Gewinnt für die Konsole und zwei Spieler. 

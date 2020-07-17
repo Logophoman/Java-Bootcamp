@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _9_** Kniffel/Yazzy
+## **A** Kniffel/Yazzy
 
 
 - Schreibe Das Spiel Kniffel für die Konsole und zwei Spieler. 

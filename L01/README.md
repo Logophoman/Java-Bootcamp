@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _2_** String Array alphabetisch Sortieren
+## **A** String Array alphabetisch Sortieren
 
 - Schreibe eine Funktion mit dem Namen SortiereStringArray die ein Array vom Typ String akzeptiert und ein alphabetisch sortiertes Array zurückgibt.
 

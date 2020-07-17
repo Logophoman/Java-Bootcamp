@@ -1,6 +1,6 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A _4_** Mehrfach verkettete Liste
+## **A** Mehrfach verkettete Liste
 
 - Schreibe eine Klasse mit dem Namen ChainList die folgende Objektattribute besitzt:
     - int value
