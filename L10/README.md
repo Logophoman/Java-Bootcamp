@@ -37,6 +37,22 @@ Try-Catch:
 
 ![Try-Catch](trycatch.JPG)
 
+
+```Java
+//Abfangen von ungültigen Nummern
+
+            String str = "";
+            while (true) {
+                try {
+                    int x = Integer.parseInt(s.nextLine());
+                    break;
+                }catch (Exception e){
+                    System.out.println("Ungültige Eingabe");
+                }
+            }
+```
+
+
 Erfülle folgnde Anforderungen: 
 
 - 2 Spieler können das Spiel Spielen

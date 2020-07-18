@@ -43,11 +43,11 @@ Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
 ---
 
-## [Würfel](L01)  
+## [Würfel](L00)  
 
 ---
 
-## [String Array alphabetisch Sortieren](L00)  
+## [String Array alphabetisch Sortieren](L01)  
 ---
 
 ## [Float Array Sortieren](L02)  
