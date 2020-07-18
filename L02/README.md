@@ -13,6 +13,28 @@
 
 ---
 
+```Java
+//Beispiellösung
+
+    public static int [] SortiereIntArray(int [] pruefen){
+        int [] ergebnis = new int[pruefen.length];
+
+        int zaehler = 0;
+
+        for (int i = 0; i < pruefen.length; i++) {
+            for (int j = 0; j < pruefen.length; j++) {
+                if(pruefen[i] > pruefen[j]){
+                    zaehler++;
+                }
+            }
+            ergebnis[zaehler] = pruefen[i];
+            zaehler = 0;
+        }
+        return ergebnis;
+    }
+
+```
+
 ## **?! _<small>Q&A</small>_** Fragen und Antworten
 
 Fragen von: [Logophoman](https://github.com/Logophoman) eingepflegt.
