@@ -7,7 +7,7 @@ Für diese Aufgabe wird die library "prog.jar" von Prof. Eisenbiegler benötigt.
 <a href="prog.jar" download>prog.jar herunterladen</a>
 
 Schauen Sie sich zuerst dieses Video an, dort wird die Vorgehensweise sehr schön erläutert:
-!https://youtu.be/kbKtFN71Lfs
+! https://youtu.be/kbKtFN71Lfs
 
 ---
 
