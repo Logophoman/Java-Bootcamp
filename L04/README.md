@@ -18,6 +18,87 @@
 
 ---
 
+
+Beispiellösung:
+```Java
+package mehrfachVerkettet;
+
+public class ChainList {
+	int value;
+	ChainList nextObject = null;
+
+	public ChainList(int inputValue) {
+		this.value = inputValue;
+	}
+
+	public void pushValue(int inputValue) {
+		// Wir gehen davon aus: Ende der Liste
+		if (this.nextObject == null) {
+			this.nextObject = new ChainList(inputValue);
+		} else {
+			this.nextObject.pushValue(inputValue);
+		}
+	}
+
+	public void popValue() {
+		if (this.nextObject.nextObject == null) {
+			this.nextObject = null;
+		} else {
+			this.nextObject.popValue();
+		}
+	}
+
+	public String getValue(int position) {
+		if (position <= 0) {
+			return "" + this.value;
+		}
+		if (this.nextObject == null) {
+			return "Die Liste ist nicht lang genug!";
+		} else {
+			return this.nextObject.getValue(position - 1);
+		}
+	}
+	
+	public int[] getArrayFromList() {
+		if (this.nextObject == null) {
+			return new int[] {this.value};
+		} else {
+			int[] temp = this.nextObject.getArrayFromList();
+			int[] result = new int[temp.length + 1];
+			
+			result[0] = this.value;
+			for (int i = 0; i < temp.length; i ++) {
+				result[i+1] = temp[i];
+			}
+			return result;
+		}
+	}
+}
+
+```
+```Java
+package mehrfachVerkettet;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		ChainList firstList = new ChainList(0);
+		for (int i = 0; i < 10; i ++) {
+			firstList.pushValue(i + 1);
+		}
+		
+		int[] finalArray = firstList.getArrayFromList();
+		
+		
+		for (int i = 0; i < finalArray.length; i++) {
+			System.out.println(finalArray[i]);
+		}
+		
+	}
+}
+
+```
+
 ## **?! _<small>Q&A</small>_** Fragen und Antworten
 
 Fragen von: [Logophoman](https://github.com/Logophoman) eingepflegt.
