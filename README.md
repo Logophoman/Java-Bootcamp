@@ -31,6 +31,8 @@ Ein gutes GitHub Issue zu einem Problem mit Ihrer Aufgabenlösung beinhaltet:
 
 Beantworten Sie auch gerne die von Ihren Kommilitonen erstellten GitHub Issues.
 
+# [Übungsprüfung](Pruefung)
+
 ---
 
 # Einfache Aufgaben
