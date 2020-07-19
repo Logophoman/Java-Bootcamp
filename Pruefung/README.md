@@ -2,9 +2,9 @@
 
 ## **A** Übungsprüfung
 
-![Download Aufgabe](https://github.com/Logophoman/Java-Bootcamp/blob/master/Pruefung/Ubungsprufung.pdf)
+[Download Aufgabe](https://github.com/Logophoman/Java-Bootcamp/blob/master/Pruefung/Ubungsprufung.pdf)
 
-![Download Beispiellösung](https://github.com/Logophoman/Java-Bootcamp/blob/master/Pruefung/MauMau.zip)
+[Download Beispiellösung](https://github.com/Logophoman/Java-Bootcamp/blob/master/Pruefung/MauMau.zip)
 
 ```Java
 package MauMau;
