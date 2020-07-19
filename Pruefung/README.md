@@ -1,141 +1,262 @@
 *[direkt zum Q&A](#-qa-fragen-und-antworten)*
 
-## **A** Hangman
+## **A** Übungsprüfung
 
+![Download Aufgabe](https://github.com/Logophoman/Java-Bootcamp/blob/master/Pruefung/Ubungsprufung.pdf)
 
-- Schreibe Das Spiel Hangman für die Konsole und mehrere Spieler. 
-
-Benötigte Ressourcen:
-
-Scanner in einer While-Schleife um den User Input abzufangen:
+![Download Beispiellösung](https://github.com/Logophoman/Java-Bootcamp/blob/master/Pruefung/MauMau.zip)
 
 ```Java
-import java.util.Scanner;
+package MauMau;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-            while (true){
-                String str = s.nextLine();
-                System.out.println(str); //Es wird ausgegeben was der Nutzer eingibt.
-                if(str.equals("exit")){
-                    break;
-            }
+public class Spiel {
+    private int spielerAmZug = 1;
+    private RealSpieler[] spieler;
+    private Kartendeck kartendeck;
+
+    public Spiel(int anzahl){
+        kartendeck = new Kartendeck();
+        kartendeck.ablegen(kartendeck.ziehen());
+        spieler = new RealSpieler[anzahl];
+        for (int i = 0; i < spieler.length; i++) {
+            spieler[i] = new RealSpieler(kartendeck);
+        }
+        spielerAmZug = ((int) Math.random() * anzahl) + 1 ;
+    }
+    public void naechsterZug(){
+        System.out.println("Ablage: " + kartendeck.ablageOben().toString());
+        System.out.println("Spieler Nr. " + spielerAmZug + " ist am Zug.");
+        System.out.println(spieler[spielerAmZug - 1].zeigeHandkarten());
+        spieler[spielerAmZug - 1].spielen();
+        spielerAmZug++;
+        if(spielerAmZug > spieler.length){
+            spielerAmZug = 1;
         }
     }
+
+    public boolean beendet(){
+        for (int i = 0; i < spieler.length; i++) {
+            if(spieler[i].keineKarten()){
+                return true;
+            }
+        }
+        return false;
+    }
 }
-```
-
-Erfülle folgnde Anforderungen: 
-
-- Mehrere Spieler können das Spiel Spielen
-- Spieler können in der Konsole Buchstaben und Wörter eingeben
-- Spieler können am Anfang ein Wort eingeben
-- Danach können die Anderen Spieler Raten
-- Nach jedem Versuch werden die Verbleibenden Versuche angezeigt
-- Die Zwischenergebnisse werden nach jeder Runde in der Konsole gezeichnet
-- Nutzer erhalten hilfreiche Anweisungen
-
-Optional mit Grafischer Darstellung:
-
-```Java
-//Beispiel ausgabe in der Konsole:
-
--------
-|   |
-|   0
-| /-+-\ 
-|   | 
-|   | 
-|  | | 
-|  | | 
-|
---------
 
 ```
----
 
 ```Java
-//Beispiellösung
-
-package bootcampss20;
+package MauMau;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Hangman {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Herzlich willkommen beim Spiel Hangman.");
-        System.out.println("Gib das Geheime Wort ein");
-        String str = s.nextLine();
-        System.out.println("Um das Spiel zu beenden gib einfach exit ein");
-        String geheimwort = str.toLowerCase();
-        int versucheÜbrig = 8;
+public class Kartendeck {
+    private ArrayList<Karte> kartenstapel;
+    private ArrayList<Karte> ablage;
 
-        String ausgabe = "";
-        for (int i = 0; i < geheimwort.length(); i++) {
-            ausgabe += "_ ";
+    public Kartendeck(){
+        kartenstapel = new ArrayList<Karte>();
+        ablage = new ArrayList<Karte>();
+        for(int i = 7; i <= 14; i++){
+            addKarte(new Karte("Herz", i));
+            addKarte(new Karte("Pik", i));
+            addKarte(new Karte("Karo", i));
+            addKarte(new Karte("Kreuz", i));
         }
+        ablegen(ziehen());
+    }
+public Karte ziehen(){
+    if(kartenstapel.size() < 1){ //
+        while (ablage.size() > 1) { // alles bis auf oberste Ablagekarte
+            addKarte(ablage.remove(0));
+        }
+    }
+    return kartenstapel.remove(0);
+}
 
-        ArrayList<Character> gefundeneBuchstaben = new ArrayList<Character>();
+public void ablegen(Karte k){
+ablage.add(k);
+}
+public Karte ablageOben(){
+return ablage.get(ablage.size()-1);
+}
+public void addKarte(Karte k){
+    kartenstapel.add((int)(Math.random()*kartenstapel.size()), k);
+}
+}
 
-        while (true){
-            System.out.println(ausgabe);
-            System.out.println("Du hast noch " + versucheÜbrig + " Versuche übrig");
-            System.out.println("Gib einen Buchstaben ein:");
-            str = s.nextLine().toLowerCase();
-            char eingabe = str.charAt(0);
+```
 
+```Java
+package MauMau;
 
-            ausgabe = "";
-            boolean buchstabeFound = false;
-            for (int i = 0; i < geheimwort.length(); i++) {
-                if(geheimwort.charAt(i) == eingabe){
-                    gefundeneBuchstaben.add(geheimwort.charAt(i));
-                    buchstabeFound = true;
-                    break;
-                }
+public class Main {
+    public static void main(String[] args){
+        Spiel spiel = new Spiel(2);
+        while(!spiel.beendet()){
+            spiel.naechsterZug();
+        }
+        System.out.println("Spiel beendet.");
+    }
+}
+```
+
+```Java
+package MauMau;
+
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Scanner;
+public class RealSpieler extends Spieler {
+    Scanner scanner = new Scanner(System.in);
+    String userEingabe = "";
+
+    public RealSpieler(Kartendeck spielkarten) {
+        super(spielkarten);
+    }
+
+    public void spielen() {
+        while (true) {
+            System.out.println("Wollen Sie eine Karte spielen? j: ja, n: nein");
+            userEingabe = scanner.nextLine();
+            if (userEingabe.equals("n")) {
+                System.out.println("Spieler Nr. " + getSpielerNummer() + " zieht eine Karte ");
+                getHandkarten().add(getSpielkarten().ziehen());
+                break;
             }
-            if (!buchstabeFound){
-                versucheÜbrig--;
-                System.out.println("Ätsch! Buchstabe " + eingabe + " kommt nicht vor.");
-            }
-            int leereBuchstaben = 0;
-            boolean matchFound = false;
-            for (int i = 0; i < geheimwort.length(); i++) {
-                for (int j = 0; j < gefundeneBuchstaben.size(); j++) {
-                    if(gefundeneBuchstaben.get(j) == geheimwort.charAt(i)){
-                        ausgabe += geheimwort.charAt(i) + " ";
-                        matchFound = true;
+            if (userEingabe.equals("j")) {
+                while (true){
+                    try {
+                        System.out.println("Nummer der Karte?");
+                        userEingabe = scanner.nextLine();
+                        karteAblegen(Integer.parseInt(userEingabe));
+                        break;
+                    }catch (Exception e){
+                        System.out.println("Ungültige Zahl");
                     }
                 }
-                if(!matchFound) {
-                    ausgabe += "_ ";
-                    leereBuchstaben++;
-                }
-                matchFound = false;
-            }
-
-            if (leereBuchstaben == 0){
-                System.out.println("Spiel Gewonnen!");
                 break;
             }
-
-            if(str.equals("exit")){
-                break;
-            }
-
-            if(versucheÜbrig == 0){
-                System.out.println("Spiel Verloren!");
-                break;
-            }
+            System.out.println("falsche Eingabe");
         }
     }
 }
-
-
 ```
+
+```Java
+package MauMau;
+
+public class Spiel {
+    private int spielerAmZug = 1;
+    private RealSpieler[] spieler;
+    private Kartendeck kartendeck;
+
+    public Spiel(int anzahl){
+        kartendeck = new Kartendeck();
+        kartendeck.ablegen(kartendeck.ziehen());
+        spieler = new RealSpieler[anzahl];
+        for (int i = 0; i < spieler.length; i++) {
+            spieler[i] = new RealSpieler(kartendeck);
+        }
+        spielerAmZug = ((int) Math.random() * anzahl) + 1 ;
+    }
+    public void naechsterZug(){
+        System.out.println("Ablage: " + kartendeck.ablageOben().toString());
+        System.out.println("Spieler Nr. " + spielerAmZug + " ist am Zug.");
+        System.out.println(spieler[spielerAmZug - 1].zeigeHandkarten());
+        spieler[spielerAmZug - 1].spielen();
+        spielerAmZug++;
+        if(spielerAmZug > spieler.length){
+            spielerAmZug = 1;
+        }
+    }
+
+    public boolean beendet(){
+        for (int i = 0; i < spieler.length; i++) {
+            if(spieler[i].keineKarten()){
+                return true;
+            }
+        }
+        return false;
+    }
+}
+```
+
+```Java
+package MauMau;
+
+import java.util.ArrayList;
+
+public abstract class Spieler {
+private int spielerNummer;
+static int spielerAnzahl = 0;
+private static final int STARTKARTEN_ANZAHL = 7;
+private Kartendeck spielkarten;
+private ArrayList<Karte> handkarten;
+//StringBuilder sb = new StringBuilder();
+
+public Spieler(Kartendeck spielkarten) {
+    this.spielkarten = spielkarten;         // Initialisieren der übergebenen Parameter
+    spielerAnzahl++;                        // beim Anlegen eines Spielers erhöht sich die (globale) Spieleranzahl um 1
+    spielerNummer = spielerAnzahl;          // beim Anlegen eines Spielers bekommt dieser eine Spielernummer entsprechend der Spieleranzahl
+    handkarten = new ArrayList<Karte>();
+    for (int i = 0; i < STARTKARTEN_ANZAHL; i++) {
+        ziehen();
+    }
+}
+    public int getSpielerNummer() {
+        return spielerNummer;
+    }
+
+    public Kartendeck getSpielkarten() {
+        return spielkarten;
+    }
+
+    public ArrayList<Karte> getHandkarten() {
+    return handkarten;
+    }
+
+    public String zeigeHandkarten(){
+        StringBuilder hand = new StringBuilder();
+        for(int i = 0; i < handkarten.size(); i++){
+            hand.append(i + ": " + handkarten.get(i).toString() + " | ");
+        }
+        return hand.toString();
+    }
+
+    public void print(){
+        System.out.println("Handkarten: " + zeigeHandkarten());
+        System.out.println("Ablage: " + spielkarten.ablageOben().getFarbe() + " " + spielkarten.ablageOben().getWert());
+    }
+    public void ziehen(){
+        handkarten.add(spielkarten.ziehen());
+    }
+    public boolean keineKarten(){
+        if(handkarten.size() < 1){
+            return true;
+        }
+        return false;
+    }
+    public void karteAblegen(int index){
+        if(handkarten.get(index) != null){
+            if(spielkarten.ablageOben().spielbar((handkarten.get(index)))){
+                System.out.println("Spieler Nr. " + spielerNummer + " Legt die Karte " + handkarten.get(index).toString());
+                spielkarten.ablegen(handkarten.remove(index));
+                return;
+            }
+        }
+        System.out.println("Sie können diese Karte nicht spielen");
+        System.out.println("Spieler Nr. " + spielerNummer + " zieht eine Karte ");
+        handkarten.add(spielkarten.ziehen());
+
+    }
+    public void spielen(){
+
+    }
+}
+```
+
 
 ## **?! _<small>Q&A</small>_** Fragen und Antworten
 
